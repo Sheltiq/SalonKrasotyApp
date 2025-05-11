@@ -108,5 +108,34 @@ namespace SalonKrasotyApp
             search = SearchTxt.Text;
             Podgotovka();
         }
+
+        private void AddProductBtn_Click(object sender, EventArgs e)
+        {
+            AddEditProductFrm frm = new AddEditProductFrm();
+
+            frm.prod = null;
+            DialogResult dr = frm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Podgotovka();
+            }
+        }
+
+        private void EditProductBtn_Click(object sender, EventArgs e)
+        {
+            Product prod = (Product)productBindingSource.Current;
+            AddEditProductFrm frm = new AddEditProductFrm();
+            frm.prod = prod;
+            DialogResult dr = frm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Podgotovka();
+            }
+        }
+
+        private void DeleteProductBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
