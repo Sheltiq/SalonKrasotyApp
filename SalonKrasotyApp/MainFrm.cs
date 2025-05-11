@@ -192,5 +192,13 @@ namespace SalonKrasotyApp
                 Podgotovka();
             }
         }
+
+        private void SalesBtn_Click(object sender, EventArgs e)
+        {
+            Product prod = (Product)productBindingSource.Current;
+            ProductSalesFrm form = new ProductSalesFrm();
+            form.prd = prod;
+            DialogResult dr = form.ShowDialog();
+        }
     }
 }

@@ -54,6 +54,7 @@
             this.DeleteProductBtn = new System.Windows.Forms.Button();
             this.CostChangeBtn = new System.Windows.Forms.Button();
             this.AttachedProductBtn = new System.Windows.Forms.Button();
+            this.SalesBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -291,11 +292,22 @@
             this.AttachedProductBtn.UseVisualStyleBackColor = true;
             this.AttachedProductBtn.Click += new System.EventHandler(this.AttachedProductBtn_Click);
             // 
+            // SalesBtn
+            // 
+            this.SalesBtn.Location = new System.Drawing.Point(343, 531);
+            this.SalesBtn.Name = "SalesBtn";
+            this.SalesBtn.Size = new System.Drawing.Size(145, 23);
+            this.SalesBtn.TabIndex = 23;
+            this.SalesBtn.Text = "Продажи товара";
+            this.SalesBtn.UseVisualStyleBackColor = true;
+            this.SalesBtn.Click += new System.EventHandler(this.SalesBtn_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.SalesBtn);
             this.Controls.Add(this.AttachedProductBtn);
             this.Controls.Add(this.CostChangeBtn);
             this.Controls.Add(this.DeleteProductBtn);
@@ -351,6 +363,7 @@
         private System.Windows.Forms.Button DeleteProductBtn;
         private System.Windows.Forms.Button CostChangeBtn;
         private System.Windows.Forms.Button AttachedProductBtn;
+        private System.Windows.Forms.Button SalesBtn;
     }
 }
 

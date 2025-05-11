@@ -36,6 +36,7 @@
             System.Windows.Forms.Label mainImagePathLabel;
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label manufacturerIDLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditProductFrm));
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.costTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
@@ -285,6 +286,7 @@
             this.Controls.Add(this.titleTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditProductFrm";
             this.Text = "Добавление и редактирование товара";
