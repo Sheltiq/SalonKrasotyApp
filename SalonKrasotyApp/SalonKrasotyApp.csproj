@@ -61,11 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditAttachedFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditAttachedFrm.Designer.cs">
+      <DependentUpon>AddEditAttachedFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditProductFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddEditProductFrm.Designer.cs">
       <DependentUpon>AddEditProductFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttachedProductFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttachedProductFrm.Designer.cs">
+      <DependentUpon>AttachedProductFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="CostChangeFrm.cs">
       <SubType>Form</SubType>
@@ -94,8 +106,14 @@
     <Compile Include="ModelEF\Tag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddEditAttachedFrm.resx">
+      <DependentUpon>AddEditAttachedFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditProductFrm.resx">
       <DependentUpon>AddEditProductFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttachedProductFrm.resx">
+      <DependentUpon>AttachedProductFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CostChangeFrm.resx">
       <DependentUpon>CostChangeFrm.cs</DependentUpon>

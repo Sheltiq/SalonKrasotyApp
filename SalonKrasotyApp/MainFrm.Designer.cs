@@ -33,6 +33,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufacturerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isActiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SearchTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SortCmb = new System.Windows.Forms.ComboBox();
@@ -44,15 +52,8 @@
             this.AddProductBtn = new System.Windows.Forms.Button();
             this.EditProductBtn = new System.Windows.Forms.Button();
             this.DeleteProductBtn = new System.Windows.Forms.Button();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manufacturerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isActiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CostChangeBtn = new System.Windows.Forms.Button();
+            this.AttachedProductBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -92,6 +93,73 @@
             this.productDataGridView.TabIndex = 1;
             this.productDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.productDataGridView_CellFormatting);
             this.productDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.produtcDataGridView_DataError);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 46;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // manufacturerIDDataGridViewTextBoxColumn
+            // 
+            this.manufacturerIDDataGridViewTextBoxColumn.DataPropertyName = "ManufacturerID";
+            this.manufacturerIDDataGridViewTextBoxColumn.DataSource = this.manufacturerBindingSource;
+            this.manufacturerIDDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.manufacturerIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.manufacturerIDDataGridViewTextBoxColumn.HeaderText = "Производитель";
+            this.manufacturerIDDataGridViewTextBoxColumn.Name = "manufacturerIDDataGridViewTextBoxColumn";
+            this.manufacturerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.manufacturerIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.manufacturerIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.manufacturerIDDataGridViewTextBoxColumn.ValueMember = "ID";
+            this.manufacturerIDDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // manufacturerBindingSource
+            // 
+            this.manufacturerBindingSource.DataSource = typeof(SalonKrasotyApp.ModelEF.Manufacturer);
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.costDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            this.costDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // isActiveDataGridViewCheckBoxColumn
+            // 
+            this.isActiveDataGridViewCheckBoxColumn.DataPropertyName = "IsActive";
+            this.isActiveDataGridViewCheckBoxColumn.HeaderText = "IsActive";
+            this.isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
+            this.isActiveDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isActiveDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(SalonKrasotyApp.ModelEF.Product);
             // 
             // SearchTxt
             // 
@@ -203,73 +271,6 @@
             this.DeleteProductBtn.UseVisualStyleBackColor = true;
             this.DeleteProductBtn.Click += new System.EventHandler(this.DeleteProductBtn_Click);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 46;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // manufacturerIDDataGridViewTextBoxColumn
-            // 
-            this.manufacturerIDDataGridViewTextBoxColumn.DataPropertyName = "ManufacturerID";
-            this.manufacturerIDDataGridViewTextBoxColumn.DataSource = this.manufacturerBindingSource;
-            this.manufacturerIDDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.manufacturerIDDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.manufacturerIDDataGridViewTextBoxColumn.HeaderText = "Производитель";
-            this.manufacturerIDDataGridViewTextBoxColumn.Name = "manufacturerIDDataGridViewTextBoxColumn";
-            this.manufacturerIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.manufacturerIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.manufacturerIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.manufacturerIDDataGridViewTextBoxColumn.ValueMember = "ID";
-            this.manufacturerIDDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // manufacturerBindingSource
-            // 
-            this.manufacturerBindingSource.DataSource = typeof(SalonKrasotyApp.ModelEF.Manufacturer);
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.costDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.ReadOnly = true;
-            this.costDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // isActiveDataGridViewCheckBoxColumn
-            // 
-            this.isActiveDataGridViewCheckBoxColumn.DataPropertyName = "IsActive";
-            this.isActiveDataGridViewCheckBoxColumn.HeaderText = "IsActive";
-            this.isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
-            this.isActiveDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isActiveDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(SalonKrasotyApp.ModelEF.Product);
-            // 
             // CostChangeBtn
             // 
             this.CostChangeBtn.Location = new System.Drawing.Point(12, 531);
@@ -280,11 +281,22 @@
             this.CostChangeBtn.UseVisualStyleBackColor = true;
             this.CostChangeBtn.Click += new System.EventHandler(this.CostChangeBtn_Click);
             // 
+            // AttachedProductBtn
+            // 
+            this.AttachedProductBtn.Location = new System.Drawing.Point(183, 531);
+            this.AttachedProductBtn.Name = "AttachedProductBtn";
+            this.AttachedProductBtn.Size = new System.Drawing.Size(154, 23);
+            this.AttachedProductBtn.TabIndex = 20;
+            this.AttachedProductBtn.Text = "Рекоменд. товары";
+            this.AttachedProductBtn.UseVisualStyleBackColor = true;
+            this.AttachedProductBtn.Click += new System.EventHandler(this.AttachedProductBtn_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.AttachedProductBtn);
             this.Controls.Add(this.CostChangeBtn);
             this.Controls.Add(this.DeleteProductBtn);
             this.Controls.Add(this.EditProductBtn);
@@ -338,6 +350,7 @@
         private System.Windows.Forms.Button EditProductBtn;
         private System.Windows.Forms.Button DeleteProductBtn;
         private System.Windows.Forms.Button CostChangeBtn;
+        private System.Windows.Forms.Button AttachedProductBtn;
     }
 }
 
