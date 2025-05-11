@@ -135,7 +135,30 @@ namespace SalonKrasotyApp
 
         private void DeleteProductBtn_Click(object sender, EventArgs e)
         {
-
+            Product prd = (Product)productBindingSource.Current;
+            DialogResult dr = MessageBox.Show("Вы действительно хотите удалить товар - " + prd.Title, "Удаление товара", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                if (prd.ProductSale.Count > 0)
+                {
+                    MessageBox.Show("Данный товар удалить нельзя," + "так как есть данные о продажах!");
+                    return;
+                }
+                if (prd.Product1.Count > 0)
+                {
+                    Program.db.Product.RemoveRange(prd.Product1);
+                }
+                Program.db.Product.Remove(prd);
+                try
+                {
+                    Program.db.SaveChanges();
+                    Podgotovka();
+                }
+                catch (Exception ex) 
+                { 
+                    MessageBox.Show(ex.Message); 
+                }
+            }
         }
     }
 }
