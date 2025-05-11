@@ -14,6 +14,7 @@ namespace SalonKrasotyApp
     public partial class MainFrm : Form
     {
         List<Product> lstFormatData = new List<Product>();
+        static public List<int> lstSelectedIdData = new List<int>();
         public MainFrm()
         {
             InitializeComponent();
@@ -157,6 +158,25 @@ namespace SalonKrasotyApp
                 catch (Exception ex) 
                 { 
                     MessageBox.Show(ex.Message); 
+                }
+            }
+        }
+
+        private void CostChangeBtn_Click(object sender, EventArgs e)
+        {
+            lstSelectedIdData.Clear();
+            if (productDataGridView.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in productDataGridView.SelectedRows)
+                {
+                    int id = (int)row.Cells[0].Value;
+                    lstSelectedIdData.Add(id);
+                }
+                CostChangeFrm form = new CostChangeFrm();
+                DialogResult dr = form.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    Podgotovka();
                 }
             }
         }
